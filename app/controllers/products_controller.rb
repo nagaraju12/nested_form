@@ -16,7 +16,13 @@ else
   render :new
   end
 end
-
+def load_subcat
+  @category = Category.find(params[:category_id])
+  @sub_categories = @category.sub_categories
+  respond_to do |format|
+    format.js
+  end
+end
 def show
 	@product= Product.find(params[:id])
 	 respond_to do |format|

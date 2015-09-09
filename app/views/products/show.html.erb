@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-<%= image_tag @product.image.url(:small) %>
+<p>
+<% @product.images.each do |i| %>
+<%= image_tag i.image %>
+<% end %>
+</p>
 
 <p>
   <strong>Name:</strong>

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-resources :products
+
 resources :articles
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 root 'products#index'
@@ -14,7 +15,14 @@ root 'products#index'
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+resources :products do
+      collection do
+        get :load_subcat
+      end
+    end
+    resources :categories do
+      resources :sub_categories
+    end
   # Example resource route with options:
   #   resources :products do
   #     member do

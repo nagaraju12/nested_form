@@ -3,6 +3,7 @@ gem "nested_form"
 gem "paperclip"
 gem 'bxslider-rails'
 gem "twitter-bootstrap-rails"
+gem 'nested_form_fields'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
